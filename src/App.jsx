@@ -1,16 +1,23 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Navbar from './components/Navbar'
-import NasaList from './components/NasaList'
 import Footer from './components/Footer'
+import NasaList from './components/NasaList'
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Header />
       <Navbar />
-      <NasaList />
+
+      <Routes>
+        <Route path="/" element={<NasaList />} />
+        <Route path="/sobre" element={<p>Página Sobre</p>} />
+        <Route path="*" element={<p>404 - Página não encontrada</p>} />
+      </Routes>
+
       <Footer />
-    </div>
+    </BrowserRouter >
   )
 }
 
