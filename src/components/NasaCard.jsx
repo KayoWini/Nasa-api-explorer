@@ -1,13 +1,12 @@
-function NasaCard() {
+function NasaCard({ asteroid }) {
     return (
         <div>
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/500px-NASA_logo.svg.png"
-                alt="Logo da NASA"
-                width="250"
-            />
-            <h2>Projeto Espacial</h2>
-            <p>Aguardando integração com a API...</p>
+            <h2>{asteroid.name}</h2>
+            <p>Data de aproximação: {asteroid.closeApproachDate}</p>
+            <p>Diâmetro estimado: {asteroid.diameterMin} - {asteroid.diameterMax} km</p>
+            <p>Velocidade: {Number(asteroid.velocity).toFixed(2)} km/h</p>
+            <p>Distância: {Number(asteroid.missDistance).toFixed(2)} km</p>
+            <p>Perigoso: {asteroid.isHazardous ? '⚠️ Sim' : '✅ Não'}</p>
         </div>
     )
 }
