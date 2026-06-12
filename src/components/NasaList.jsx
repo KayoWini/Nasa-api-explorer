@@ -6,6 +6,7 @@ function NasaList() {
     const [asteroids, setAsteroids] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+    const [search, setSearch] = useState('')
 
     useEffect(() => {
         let cancelled = false
@@ -35,14 +36,31 @@ function NasaList() {
         }
     }, [])
 
+    const filteredAsteroids = asteroids.filter(asteroid =>
+        asteroid.name.toLowerCase().includes(search.toLowerCase())
+    )
+
     if (loading) return <p>Carregando asteroides...</p>
     if (error) return <p>Erro: {error}</p>
 
     return (
         <section>
-            {asteroids.map(asteroid => (
-                <NasaCard key={asteroid.id} asteroid={asteroid} />
-            ))}
+            <input
+                type="text"
+                placeholder="Buscar asteroide pelo nome..."
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+            />
+
+            {filteredAsteroids.length === 0 ? (
+                <p>Nenhum asteroide encontrado.</p>
+            ) : (
+                <div className="cards-grid">
+                    {filteredAsteroids.map(asteroid => (
+                        <NasaCard key={asteroid.id} asteroid={asteroid} />
+                    ))}
+                </div>
+            )}
         </section>
     )
 }
