@@ -1,6 +1,6 @@
 export default function Sobre() {
   return (
-    <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' }}>
+    <main style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' }}>
       <h1 style={{ color: '#646cff', borderBottom: '1px solid #333', paddingBottom: '10px' }}>
         Sobre o Explorador da NASA
       </h1>
@@ -30,6 +30,6 @@ export default function Sobre() {
         interface e <strong>React Router DOM</strong> para o gerenciamento dinâmico das rotas, 
         garantindo uma navegação fluida sem recarregamento da página.
       </p>
-    </div>
+    </main>
   );
 }

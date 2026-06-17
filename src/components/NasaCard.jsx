@@ -1,9 +1,8 @@
-import { Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
 
 function NasaCard({ asteroid }) {
     return (
-        <div className="card">
+        <article className="card">
             <h2>{asteroid.name}</h2>
             <p>📅 Data de aproximação: <span>{asteroid.closeApproachDate}</span></p>
             <p>📏 Diâmetro estimado: <span>{asteroid.diameterMin} - {asteroid.diameterMax} km</span></p>
@@ -15,12 +14,11 @@ function NasaCard({ asteroid }) {
                     {asteroid.isHazardous ? '⚠️ Sim' : '✅ Não'}
                 </span>
             </p>
-            <Link to={`/asteroide/${asteroid.id}`} style={{ display: 'block', marginTop: '15px', padding: '10px', backgroundColor: '#646cff', color: '#fff', textDecoration: 'none', borderRadius: '5px', textAlign: 'center' }}>
+            <Link to={`/asteroide/${asteroid.id}`} className="btn-detalhes">
                 Ver Detalhes 🚀
             </Link>
-        </div>
-
+        </article>
     )
 }
 
-export default NasaCard
+export default NasaCard;
