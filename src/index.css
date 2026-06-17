@@ -449,3 +449,41 @@ footer {
     text-shadow: 0 0 20px rgba(180, 80, 255, 0.8);
     padding: 0 2rem;
 }
+
+/* =========================================
+   ESTILOS PÁGINA SOBRE
+   ========================================= */
+.sobre-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.sobre-titulo {
+    color: #646cff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.sobre-secao {
+    color: #646cff;
+    margin-top: 30px;
+}
+
+.sobre-paragrafo {
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.sobre-lista {
+    background-color: #1a1a24;
+    padding: 20px 40px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.sobre-lista li {
+    margin-bottom: 10px;
+}
