@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom'
+
+
 function NasaCard({ asteroid }) {
     return (
         <div className="card">
@@ -12,7 +15,11 @@ function NasaCard({ asteroid }) {
                     {asteroid.isHazardous ? '⚠️ Sim' : '✅ Não'}
                 </span>
             </p>
+            <Link to={`/asteroide/${asteroid.id}`} style={{ display: 'block', marginTop: '15px', padding: '10px', backgroundColor: '#646cff', color: '#fff', textDecoration: 'none', borderRadius: '5px', textAlign: 'center' }}>
+                Ver Detalhes 🚀
+            </Link>
         </div>
+
     )
 }
 

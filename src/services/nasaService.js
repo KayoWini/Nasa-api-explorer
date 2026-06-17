@@ -30,7 +30,7 @@ export async function fetchAsteroidById(id) {
     }
 
     const data = await response.json()
-    return mapAsteroid(data)
+    return mapAsteroidDetails(data)
 }
 
 function mapAsteroid(item) {
@@ -43,5 +43,19 @@ function mapAsteroid(item) {
         closeApproachDate: item.close_approach_data?.[0]?.close_approach_date ?? 'N/A',
         velocity: item.close_approach_data?.[0]?.relative_velocity.kilometers_per_hour ?? 'N/A',
         missDistance: item.close_approach_data?.[0]?.miss_distance.kilometers ?? 'N/A',
+    }
+}
+
+function mapAsteroidDetails(item) {
+    return {
+        id: item.id,
+        name: item.name,
+        isHazardous: item.is_potentially_hazardous_asteroid,
+        absoluteMagnitude: item.absolute_magnitude_h,
+        firstObservation: item.orbital_data?.first_observation_date ?? 'N/A',
+        lastObservation: item.orbital_data?.last_observation_date ?? 'N/A',
+        orbitClass: item.orbital_data?.orbit_class?.orbit_class_type ?? 'N/A',
+        orbitDescription: item.orbital_data?.orbit_class?.orbit_class_description ?? 'N/A',
+        jplUrl: item.nasa_jpl_url
     }
 }

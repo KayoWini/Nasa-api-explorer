@@ -3,6 +3,8 @@ import Header from './components/Header'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import NasaList from './components/NasaList'
+import Sobre from './pages/Sobre'
+import AsteroideDetails from './pages/AsteroideDetails' 
 
 function App() {
   return (
@@ -12,7 +14,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<NasaList />} />
-        <Route path="/sobre" element={<p>Página Sobre</p>} />
+        <Route path="/sobre" element={<Sobre />} />
+      
+        <Route path="/asteroide/:id" element={<AsteroideDetails />} />
+        
         <Route path="*" element={<p>404 - Página não encontrada</p>} />
       </Routes>
 
