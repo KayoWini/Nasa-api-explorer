@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { fetchAsteroidById } from '../services/nasaService'; 
+import { useParams, useNavigate } from 'react-router-dom';
+import { fetchAsteroidById } from '../services/nasaService';
 
 export default function AsteroideDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [asteroide, setAsteroide] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -38,16 +39,22 @@ export default function AsteroideDetails() {
 
   return (
     <main className="details-container">
-      <h1 className="details-title">
-        {asteroide.name}
-      </h1>
-      
+      <button className="btn-voltar" onClick={() => navigate(-1)}>
+        ← Voltar
+      </button>
+
+      <h1 className="details-title">{asteroide.name}</h1>
+
       <section className="details-content">
         <h3>Dados Orbitais e Classificação</h3>
-        
+
         <p><strong>Referência (ID):</strong> {asteroide.id}</p>
-        <p><strong>Potencialmente Perigoso?</strong> <span className={asteroide.isHazardous ? 'hazardous-yes' : 'hazardous-no'}>{asteroide.isHazardous ? 'Sim ⚠️' : 'Não ✅'}</span></p>
-        <p><strong>Magnitude Absoluta (Luminosidade):</strong> {asteroide.absoluteMagnitude} H</p>
+        <p><strong>Potencialmente Perigoso?</strong>{' '}
+          <span className={asteroide.isHazardous ? 'hazardous-yes' : 'hazardous-no'}>
+            {asteroide.isHazardous ? 'Sim ⚠️' : 'Não ✅'}
+          </span>
+        </p>
+        <p><strong>Magnitude Absoluta:</strong> {asteroide.absoluteMagnitude} H</p>
         <p><strong>Primeira Observação:</strong> {asteroide.firstObservation}</p>
         <p><strong>Última Observação:</strong> {asteroide.lastObservation}</p>
         <p><strong>Classe da Órbita:</strong> {asteroide.orbitClass}</p>
