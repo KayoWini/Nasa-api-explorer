@@ -9,20 +9,7 @@
 
 Single Page Application (SPA) desenvolvida em React que consome a API da NASA para explorar dados de asteroides próximos à Terra. Permite visualizar uma lista atualizada de asteroides, filtrar por nome e acessar informações detalhadas de cada objeto celeste.
 
----
 
-## ✨ Funcionalidades Implementadas
-
-- **Catálogo de Asteroides:** Lista de asteroides dos últimos 7 dias com grid responsivo
-- **Busca/Filtro em Tempo Real:** Filtra asteroides por nome sem requisição adicional à API
-- **Página de Detalhes:** Informações completas incluindo magnitude, classe orbital e link JPL
-- **Indicador de Periculosidade:** Visual de risco (⚠️ Perigoso / ✅ Seguro)
-- **Navegação Dinâmica:** Menu com destacamento de rota ativa (NavLink)
-- **Página 404:** Para rotas inexistentes
-- **Design Responsivo:** Tema space/cosmos com glassmorphism
-- **Tratamento de Erros:** Mensagens customizadas para falhas na API
-
----
 
 ## 📥 Como Instalar e Executar
 
@@ -53,7 +40,7 @@ Acesse: `http://localhost:5173`
 
 ## 🌐 Projeto Publicado
 
-*(Adicionar link quando publicado em Vercel, Netlify ou GitHub Pages)*
+https://nasa-explorer-luiz-kayo.netlify.app/
 
 ---
 
